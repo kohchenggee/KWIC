@@ -9,7 +9,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int input = numOfInputs(sc);// TODO Auto-generated method stub
 		
-		filterAndInsert(msgArray, ignoreWords, sc, input);
+		msgArray=filterIgnoreWords( ignoreWords, sc, input);
 		Collections.sort(msgArray);
 		printMsg(msgArray);
 	}
@@ -27,7 +27,8 @@ public class Main {
 		return input;
 	}
 
-	private static void filterAndInsert(ArrayList<String> msgArray, String[] ignoreWords, Scanner sc, int input) {
+	private static ArrayList<String> filterIgnoreWords( String[] ignoreWords, Scanner sc, int input) {
+		ArrayList<String> msgArray = new ArrayList<String>();
 		String input2;
 		for(int i=0;i<input;i++){
 
@@ -42,6 +43,7 @@ public class Main {
 				}
 			}
 		}
+		return msgArray;
 	}
 
 	private static boolean checkIgnoreWords(String[] ignoreWords, String[] split, int j, boolean flag) {
