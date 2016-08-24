@@ -10,8 +10,9 @@ public class Main {
 		int input = numOfInputs(sc);// TODO Auto-generated method stub
 		
 		msgArray=filterIgnoreWords( ignoreWords, sc, input);
-		Collections.sort(msgArray);
-		printMsg(msgArray);
+		ArrayList<String> msgArray2=msgArray;
+		Collections.sort(msgArray2);
+		printMsg(msgArray2);
 	}
 
 	private static void printMsg(ArrayList<String> msgArray) {
