@@ -13,7 +13,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		// TODO Auto-generated method stub
 		
-		System.out.println("Press 1 to run with Shared Data Solution/nPress 2 to run with ADT");
+		System.out.println("Press 1 to run with Shared Data Solution\nPress 2 to run with ADT");
 		String num=sc.nextLine();
 		int input = Integer.parseInt(num);
 		if(input==1){

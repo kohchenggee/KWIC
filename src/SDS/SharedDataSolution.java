@@ -12,7 +12,11 @@ public class SharedDataSolution {
 	ArrayList<String> msgArray = new ArrayList<String>();
 	Scanner sc = new Scanner(System.in);
 	int input = numOfInputs(sc);
+	if(input>0){
 	msgArray=filterIgnoreWords(ignoreWords,sc,input);
+	}else{
+		msgArray=filterIgnoreWords2(ignoreWords,sc);
+	}
 	Collections.sort(msgArray);
 	printMsg(msgArray);
 	}
@@ -23,7 +27,7 @@ public class SharedDataSolution {
 	}
 
 	private static int numOfInputs(Scanner sc) {
-		System.out.println("Number of Input");
+		System.out.println("Number of Inputs. Please insert 0 if not sure of the number of lines.");
 		String num=sc.nextLine();
 		int input = Integer.parseInt(num);
 		return input;
@@ -45,6 +49,25 @@ public class SharedDataSolution {
 				}
 			}
 		}
+		return msgArray;
+	}
+	private static ArrayList<String> filterIgnoreWords2( String[] ignoreWords, Scanner sc) {
+		ArrayList<String> msgArray = new ArrayList<String>();
+		String input2;
+		System.out.println("System will display the list when enter Empty String.");
+		input2=sc.nextLine();
+		while(!input2.equals("")){
+			String[] split = input2.split(" ");
+			for(int j=0;j<split.length;j++){
+				String msg = "";
+				boolean flag=false;
+				flag = checkIgnoreWords(ignoreWords, split, j, flag);
+				if(flag==false){
+					addStringtoArrayList(msgArray, split, j, msg);
+				}
+			}input2=sc.nextLine();
+		}
+		
 		return msgArray;
 	}
 
