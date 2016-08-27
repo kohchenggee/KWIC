@@ -10,9 +10,13 @@ public class Input {
 	
 	public void readInput(){
 		input = sc.nextLine();
-		lines = input.split(",");
-		for(int i = 0; i < lines.length; i++){
-			words.setChar(lines[i]);
+		while(!input.equals("")){
+			/*lines = input.split(",");
+			for(int i = 0; i < lines.length; i++){
+				words.setChar(lines[i]);
+			}*/
+			words.setChar(input);
+			input=sc.nextLine();
 		}
 	}
 	
