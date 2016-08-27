@@ -31,7 +31,9 @@ public class SharedDataSolution {
 		while(!input.equals("")){
 			ignoreWords[count]=input;
 			input=sc.nextLine();
+			count++;
 		}
+		
 		return ignoreWords;
 	}
 
