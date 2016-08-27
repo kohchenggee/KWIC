@@ -7,11 +7,11 @@ import java.util.Scanner;
 
 public class SharedDataSolution {
 
-	public static String[] ignoreWords = {"is", "the", "of", "and", "as", "a", "after"};
+	public static String[] ignoreWords ;
 	public static void runSSD(){
 	ArrayList<String> msgArray = new ArrayList<String>();
 	Scanner sc = new Scanner(System.in);
-
+	ignoreWords=insertIgnoreWords(sc);
 		msgArray=filterIgnoreWords(ignoreWords,sc);
 	
 	Collections.sort(msgArray);
@@ -23,7 +23,17 @@ public class SharedDataSolution {
 		}
 	}
 
-
+	private static String[] insertIgnoreWords(Scanner sc){
+		String[] ignoreWords=new String[100];
+		System.out.println("Please insert the ignore Words. Insert an empty line when complete.");
+		String input=sc.nextLine();
+		int count=0;
+		while(!input.equals("")){
+			ignoreWords[count]=input;
+			input=sc.nextLine();
+		}
+		return ignoreWords;
+	}
 
 
 	private static ArrayList<String> filterIgnoreWords( String[] ignoreWords, Scanner sc) {
