@@ -2,10 +2,10 @@ package ADT;
 
 import java.util.ArrayList;
 
-public class Circular_shift {
+public class CircularShift {
 	private ArrayList<String> wordList = new ArrayList<String>();
 	private ArrayList<String> shiftWordList = new ArrayList<String>();
-	private String[] ignoreString,splitString;
+	private String[] ignoreString;
 	
 	public void setup(Input in, String[] ignoreWords){
 		wordList = in.getInput().getChar();
