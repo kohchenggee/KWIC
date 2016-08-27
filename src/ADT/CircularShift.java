@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class CircularShift {
 	private ArrayList<String> wordList = new ArrayList<String>();
 	private ArrayList<String> shiftWordList = new ArrayList<String>();
-	private String[] ignoreString;
+	private ArrayList<String> ignoreList = new ArrayList<String>();
 	
-	public void setup(Input in, String[] ignoreWords){
+	public void setup(Input in){
 		wordList = in.getInput().getChar();
-		ignoreString = ignoreWords;
+		ignoreList = in.getInput().getIgnore();
 	}
 
 	public void shift() {
@@ -60,8 +60,8 @@ public class CircularShift {
 
 	private boolean checkIgnore(String string) {
 		// TODO Auto-generated method stub
-		for(int i=0;i<ignoreString.length;i++){
-			if(string.toLowerCase().equals(ignoreString[i])){
+		for(int i=0;i<ignoreList.size();i++){
+			if(string.toLowerCase().equals(ignoreList.get(i).toLowerCase().trim())){
 				return false;
 			}
 		}

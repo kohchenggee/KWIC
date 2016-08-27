@@ -3,8 +3,6 @@ package ADT;
 
 public class MasterControl {
 	
-	public static String[] ignoreWords = {"is", "the", "of", "and", "as", "a", "after"};
-	
 	public static void run() {
 		// TODO Auto-generated method stub
 		Input i = new Input(); 
@@ -12,7 +10,7 @@ public class MasterControl {
 		AlphabeticShifts a = new AlphabeticShifts();
 		Output o = new Output();
 		i.readInput();
-		c.setup(i,ignoreWords);
+		c.setup(i);
 		c.shift();
 		a.sort(c);
 		o.print(a);
